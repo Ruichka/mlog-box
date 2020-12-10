@@ -1,0 +1,11 @@
+# End the main loop
+end
+# Functions definition
+# drawLetter(func.code) - Draw a letter depending on it's code
+# Switch statement
+jump 0 equal func.code 0
+jump 0 equal func.code 1
+jump 0 equal func.code 2
+# 0: 0
+# 1: 1
+# 2: 2
