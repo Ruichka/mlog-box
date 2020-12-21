@@ -1,0 +1,20 @@
+read instruction bank1 0
+read arg.letter bank1 1
+read arg.x bank1 2
+read arg.y bank1 3
+set ret $after
+jump $drawletter always
+*after print "Done!"
+printflush message1
+# End the main loop
+end
+# Draw a letter depending on it's code
+*drawletter jump $drawletter(0) equal func.code 0
+set @counter ret
+# 0: 0
+*drawletter(0) op sub letterX1 arg.x 5
+op add letterY1 arg.y 5
+op add letterX2 arg.x 5
+draw color 255 255 255
+draw line letterX1 letterY1 letterX2 letterY1
+set @counter ret
